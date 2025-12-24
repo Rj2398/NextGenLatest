@@ -1,0 +1,854 @@
+{
+  "welcome": "Welcome to NextGen!",
+  "description": "This is a sample app with multi-language support.",
+  "home": {
+    "title": "Home Screen",
+    "loading": "Loading data...",
+    "error": "Error fetching data"
+  },
+  "StartUp": {
+    "title": "Select User type",
+    "user": "User",
+    "user_type": "user",
+    "academia": "Academia",
+    "academia_type": "academia",
+    "merchant": "Merchant",
+    "merchant_type": "merchant",
+    "no_internet_connection": "No internet connection",
+    "failed_to_fetch_page_group": "Failed to fetch page group information",
+    "something_went_wrong": "Something went wrong. Please try again.",
+    "error_title": "Error",
+    "ok": "OK"
+  },
+  "onboarding": [
+    {
+      "image": "onboard1",
+      "title": "Manage Your School Store",
+      "description": "Easily update store info, hours, and contact details to keep everything up-to-date."
+    },
+    {
+      "image": "onboard2",
+      "title": "Track Inventory in Real-Time",
+      "description": "Stay informed with stock levels and never miss a sale due to out-of-stock items."
+    },
+    {
+      "image": "onboard3",
+      "title": "Promote with Custom Ads",
+      "description": "Design and publish ads to highlight offers and new arrivals in minutes."
+    },
+    {
+      "image": "onboard4",
+      "title": "Attract Buyers with Discounts",
+      "description": "Offer limited-time deals to boost traffic and increase conversions."
+    },
+    {
+      "image": "onboard5",
+      "title": "Build Your Brand",
+      "description": "Showcase your school's identity with a rich profile and contact information."
+    }
+  ],
+  "buttons": {
+    "next": "Next",
+    "back": "Back",
+    "getStarted": "Get Started"
+  },
+  "userTitle": {
+    "user": "User",
+    "institute": "Institute",
+    "merchant": "Merchant"
+  },
+  "login": {
+    "title": "Login",
+    "email": "Enter Username /Email",
+    "emailPlaceholder": "Enter email",
+    "passwordPlaceholder": "Enter password",
+    "password": "Password",
+    "forgotPassword": "Forgot Password",
+    "loginButton": "Login",
+    "loggingIn": "Logging in...",
+    "genericError": "An error occurred. Please try again.",
+    "registerButton": "Register",
+    "newHere": "New here ?",
+    "registerTxt": "Register Now",
+    "send": "Send"
+  },
+  "validation": {
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email format",
+    "passwordRequired": "Password is required",
+    "passwordMinLength": "Password must be at least 6 characters"
+  },
+  "emailSent": {
+    "title": "Check Your Email",
+    "description": "Check your inbox  to reset password",
+    "instruction": {
+      "title": "Follow Below Instruction",
+      "instruction1": "Click on ",
+      "instruction_1": "Reset Password Link",
+      "instruction2": "Create ",
+      "instruction_2": "New Password"
+    },
+    "button_1": "Login",
+    "button_2": "Resend Email",
+    "label_1": "Didn't get mail ?",
+    "label_2": "Check Spam",
+    "label_3": "Contact Support",
+    "success": "Email Sent Successfully",
+    "successDescription": "Please check your inbox for further instructions"
+  },
+  "error": {
+    "missingParams": "Missing Parameters",
+    "missingParamsDescription": "Email or user type is missing"
+  },
+  "network_error": "No Internet Connection",
+  "network_message": "Please check your connection.",
+  "logout": "Logout",
+  "unauthorized": "Session expired. Please login again.",
+
+  "registerPage": {
+    // to be removed when actual api is integrated
+    "pageId": 1,
+    "pageName": "Academia_ContactVerification",
+    "sections": [
+      {
+        "id": 1,
+        "name": "createAccount",
+        "title": "Let's create your account",
+        "order": 0,
+        "fields": [
+          {
+            "id": 1,
+            "fieldName": "full_name",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 0,
+            "isVisible": true,
+            "label": "Full Name*",
+            "placeholder": "Enter full name",
+            "helpText": null,
+            "displayName": "Full Name",
+            "regexPattern": "^[a-zA-Z\\s]{2,}$"
+          },
+          {
+            "id": 2,
+            "fieldName": "email_address",
+            "fieldType": "EMAIL",
+            "isRequired": true,
+            "displayOrder": 1,
+            "isVisible": true,
+            "label": "Email Address*",
+            "placeholder": "Enter email address",
+            "helpText": null,
+            "displayName": "Email Address",
+            "regexPattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+          },
+          {
+            "id": 3,
+            "fieldName": "contact_number",
+            "fieldType": "PHONE",
+            "isRequired": true,
+            "displayOrder": 2,
+            "isVisible": true,
+            "label": "Contact Number*",
+            "placeholder": "+971-XX-XXXXXXX",
+            "helpText": "UAE phone format required",
+            "displayName": "Contact Number",
+            "regexPattern": "^\\+971-[0-9]{2}-[0-9]{7}$",
+            "actions": [
+              {
+                "id": "sendOtp",
+                "label": "Send OTP",
+                "type": "secondary",
+                "apiCallRequired": true,
+                "method": "POST",
+                "endpoint": "/auth/send-otp",
+                "params": {"toField": "contact_number"}
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "fieldName": "otp",
+            "fieldType": "OTP",
+            "isRequired": true,
+            "displayOrder": 3,
+            "isVisible": true,
+            "label": "Enter OTP sent to your number",
+            "placeholder": "____",
+            "helpText": null,
+            "displayName": "OTP",
+            "regexPattern": "^[0-9]{4}$",
+            "otpLength": 4,
+            "actions": [
+              {
+                "id": "verifyOtp",
+                "label": "Verify",
+                "type": "secondary",
+                "apiCallRequired": true,
+                "method": "POST",
+                "endpoint": "/auth/verify-otp",
+                "params": {"toField": "contact_number", "codeField": "otp"}
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "id": "next",
+            "label": "Next",
+            "type": "primary",
+
+            "apiCallRequired": true, // We submit this section before moving to the next page
+            "method": "POST",
+            "endpoint": "/registration/step/1",
+            "submitSectionId": 1
+          }
+        ],
+        "footer": {
+          "text": "Already have an account?",
+          "linkText": "Log in",
+          "linkAction": "navigateToLogin"
+        }
+      },
+      {
+        "id": 2,
+        "name": "setPassword",
+        "title": "Let's create your account",
+        "order": 0,
+        "fields": [
+          {
+            "id": 301,
+            "fieldName": "setPassword",
+            "fieldType": "PASSWORD",
+            "isRequired": true,
+            "displayOrder": 1,
+            "isVisible": true,
+            "label": "Set Password",
+            "placeholder": "Enter your password",
+            "regexPattern": "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%&*]).{6,}$", // password rule
+            "helpText": "Password must be at least 6 characters, include letters, numbers and one special character (@#$%&*)",
+            "displayName": "Password"
+          },
+          {
+            "id": 302,
+            "fieldName": "confirmPassword",
+            "fieldType": "PASSWORD",
+            "isRequired": true,
+            "displayOrder": 2,
+            "isVisible": true,
+            "label": "Confirm Password",
+            "placeholder": "Re-enter your password",
+            "regexPattern": "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%&*]).{6,}$",
+            "helpText": "Both passwords must match",
+            "displayName": "Confirm Password"
+          }
+        ],
+        "buttons": [
+          {
+            "id": "back",
+            "label": "Back",
+            "type": "secondary",
+            "layout": "row",
+            "apiCallRequired": false,
+            "method": null,
+            "endpoint": null,
+            "submitSectionId": null,
+            "navigateTo": "previousSection"
+          },
+          {
+            "id": "next",
+            "label": "Next",
+            "layout": "row",
+            "type": "primary",
+            "apiCallRequired": false,
+            "method": "POST",
+            "endpoint": "/registration/step/merchant",
+            "submitSectionId": 10,
+            "navigateTo": "nextSection"
+          }
+        ],
+        "footer": {
+          "text": "",
+          "linkText": "",
+          "linkAction": ""
+        }
+      },
+      {
+        "id": 10,
+        "name": "merchantSetup",
+        "title": "Let's setup your merchant account",
+        "subtitle": "Start your 30-day free trial.",
+        "order": 0,
+        "fields": [
+          {
+            "id": 1001,
+            "fieldName": "merchant_name",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 0,
+            "isVisible": true,
+            "label": "Merchant Name*",
+            "placeholder": "Merchant Name",
+            "helpText": null,
+            "displayName": "Merchant Name",
+            "regexPattern": "^[\\w\\s\\.\\-]{2,}$",
+            "actions": []
+          },
+          {
+            "id": 1002,
+            "fieldName": "merchant_email",
+            "fieldType": "EMAIL",
+            "isRequired": true,
+            "displayOrder": 1,
+            "isVisible": true,
+            "label": "Merchant Email Address*",
+            "placeholder": "Merchant Email Address",
+            "helpText": null,
+            "displayName": "Merchant Email",
+            "regexPattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+            "actions": []
+          },
+          {
+            "id": 1003,
+            "fieldName": "merchant_phone",
+            "fieldType": "PHONE",
+            "isRequired": true,
+            "displayOrder": 2,
+            "isVisible": true,
+            "label": "Merchant Phone Number*",
+            "placeholder": "Merchant Phone Number",
+            "helpText": null,
+            "displayName": "Merchant Phone",
+            "regexPattern": "^\\+?[0-9\\s\\-\\(\\)]{7,}$"
+          },
+          {
+            "id": 1004,
+            "fieldName": "website_address",
+            "fieldType": "URL",
+            "isRequired": true,
+            "displayOrder": 3,
+            "isVisible": true,
+            "label": "Website Address*",
+            "placeholder": "Website Address",
+            "helpText": null,
+            "displayName": "Website Address",
+            "regexPattern": "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$",
+            "actions": []
+          },
+          {
+            "id": 1005,
+            "fieldName": "business_name",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 4,
+            "isVisible": true,
+            "label": "Business Name*",
+            "placeholder": "Business Name",
+            "helpText": null,
+            "displayName": "Business Name",
+            "regexPattern": "^[\\w\\s\\.\\-]{2,}$",
+            "actions": []
+          },
+          {
+            "id": 1006,
+            "fieldName": "business_type",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 5,
+            "isVisible": true,
+            "label": "Business Type*",
+            "placeholder": "Business Type",
+            "helpText": null,
+            "displayName": "Business Type",
+            "regexPattern": null,
+            "actions": []
+          },
+          {
+            "id": 1007,
+            "fieldName": "emirates_id",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 6,
+            "isVisible": true,
+            "label": "Emirates Id*",
+            "placeholder": "Emirates Id",
+            "helpText": null,
+            "displayName": "Emirates Id",
+            "regexPattern": "^[A-Z0-9\\-]{4,}$",
+            "actions": []
+          }
+        ],
+        "buttons": [
+          {
+            "id": "back",
+            "label": "Back",
+            "type": "secondary",
+            "layout": "row",
+            "apiCallRequired": false,
+            "method": null,
+            "endpoint": null,
+            "submitSectionId": null,
+            "navigateTo": "previousSection"
+          },
+          {
+            "id": "next",
+            "label": "Next",
+            "layout": "row",
+            "type": "primary",
+            "apiCallRequired": false,
+            "method": "POST",
+            "endpoint": "/registration/step/merchant",
+            "submitSectionId": 10,
+            "navigateTo": "nextSection"
+          }
+        ],
+        "footer": {
+          "text": "Already have an account?",
+          "linkText": "Log in",
+          "linkAction": "navigateToLogin"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Address Details",
+        "title": "Please provide your Institute address",
+        "order": 3,
+        "fields": [
+          {
+            "id": 1,
+            "fieldName": "building_name",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 0,
+            "isVisible": true,
+            "label": "Building Name/Number*",
+            "placeholder": "Building Name/Number*",
+            "helpText": null,
+            "displayName": "Building Name/Number",
+            "regexPattern": "^[a-zA-Z0-9\\s\\-\\/]{1,100}$"
+          },
+          {
+            "id": 2,
+            "fieldName": "street_name",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 1,
+            "isVisible": true,
+            "label": "Street Name*",
+            "placeholder": "Street Name*",
+            "helpText": null,
+            "displayName": "Street Name",
+            "regexPattern": "^[a-zA-Z0-9\\s\\-]{1,100}$"
+          },
+          {
+            "id": 3,
+            "fieldName": "area_locality",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 2,
+            "isVisible": true,
+            "label": "Area/Locality*",
+            "placeholder": "Area/Locality*",
+            "helpText": null,
+            "displayName": "Area/Locality",
+            "regexPattern": "^[a-zA-Z0-9\\s\\-]{1,100}$"
+          },
+          {
+            "id": 4,
+            "fieldName": "city",
+            "fieldType": "DROPDOWN",
+            "isRequired": true,
+            "displayOrder": 3,
+            "isVisible": true,
+            "label": "City*",
+            "placeholder": "City*",
+            "helpText": null,
+            "displayName": "City",
+            "regexPattern": null,
+            "options": [
+              {"value": "dubai", "label": "Dubai"},
+              {"value": "abu_dhabi", "label": "Abu Dhabi"},
+              {"value": "sharjah", "label": "Sharjah"},
+              {"value": "ajman", "label": "Ajman"},
+              {"value": "ras_al_khaimah", "label": "Ras Al Khaimah"},
+              {"value": "fujairah", "label": "Fujairah"},
+              {"value": "umm_al_quwain", "label": "Umm Al Quwain"}
+            ]
+          },
+          {
+            "id": 5,
+            "fieldName": "province",
+            "fieldType": "DROPDOWN",
+            "isRequired": true,
+            "displayOrder": 4,
+            "isVisible": true,
+            "label": "Province*",
+            "placeholder": "Province*",
+            "helpText": null,
+            "displayName": "Province",
+            "regexPattern": null,
+            "options": [
+              {"value": "dubai", "label": "Dubai"},
+              {"value": "abu_dhabi", "label": "Abu Dhabi"},
+              {"value": "sharjah", "label": "Sharjah"},
+              {"value": "ajman", "label": "Ajman"},
+              {"value": "ras_al_khaimah", "label": "Ras Al Khaimah"},
+              {"value": "fujairah", "label": "Fujairah"},
+              {"value": "umm_al_quwain", "label": "Umm Al Quwain"}
+            ]
+          },
+          {
+            "id": 6,
+            "fieldName": "postal_code",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 5,
+            "isVisible": true,
+            "label": "Postal Code*",
+            "placeholder": "Postal Code*",
+            "helpText": null,
+            "displayName": "Postal Code",
+            "regexPattern": "^[0-9]{5}$"
+          },
+          {
+            "id": 7,
+            "fieldName": "gps_location",
+            "fieldType": "gps_location",
+            "isRequired": true,
+            "displayOrder": 6,
+            "isVisible": true,
+            "label": "GPS Location*",
+            "placeholder": "GPS Location*",
+            "helpText": "Tap the location icon to autofill using your current position",
+            "displayName": "GPS Location",
+            "regexPattern": "^-?([1-8]?[1-9]|[1-9]0)\\.{1}\\d{1,6},-?([1-8]?[1-9]|[1-9]0)\\.{1}\\d{1,6}$",
+            "actions": [
+              {
+                "id": "detectLocation",
+                "label": "Use current location",
+                "type": "secondary",
+                "apiCallRequired": true,
+                "method": "GET",
+                "endpoint": "/device/location/current",
+                "params": {
+                  "provider": "googleMaps",
+                  "composeInto": "gps_location"
+                },
+                "chainedActions": [
+                  {
+                    "id": "reverseGeocode",
+                    "label": "Reverse Geocode",
+                    "type": "background",
+                    "apiCallRequired": true,
+                    "method": "GET",
+                    "endpoint": "https://maps.googleapis.com/maps/api/geocode/json",
+                    "params": {
+                      "latlng": "{{gps_location}}",
+                      "key": "{{GOOGLE_MAPS_API_KEY}}"
+                    },
+                    "mapResponseToFields": {
+                      "street_name": "route",
+                      "area_locality": "sublocality",
+                      "city": "locality",
+                      "province": "administrative_area_level_1",
+                      "postal_code": "postal_code"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "id": "back",
+            "label": "Back",
+            "type": "secondary",
+            "apiCallRequired": false,
+            "layout": "row"
+          },
+          {
+            "id": "next",
+            "label": "Next",
+            "type": "primary",
+            "apiCallRequired": true,
+            "method": "POST",
+            "endpoint": "/registration/step/address",
+            "submitSectionId": 4,
+            "layout": "row"
+          }
+        ],
+        "footer": {
+          "text": "Already have an account?",
+          "linkText": "Log in",
+          "linkAction": "navigateToLogin"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Verify_Institute",
+        "title": "Please verify your Institute ",
+        "order": 4,
+        "fields": [
+          {
+            "id": 1,
+            "fieldName": "trade_license",
+            "fieldType": "FILE",
+            "isRequired": true,
+            "displayOrder": 1,
+            "isVisible": true,
+            "label": "*Upload Trade License",
+            "placeholder": "*Upload Trade License",
+            "helpText": "PDF or image, max 5 MB",
+            "displayName": "Trade License",
+            "regexPattern": null,
+            "fileConfig": {
+              "acceptedFormats": ["pdf", "images"],
+              "maxSizeBytes": 5242880,
+              "maxSizeMB": "5"
+            },
+            "actions": [
+              {
+                "id": "openFilePicker",
+                "label": "Choose file",
+                "type": "secondary",
+                "apiCallRequired": false
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "fieldName": "accreditation_certificate",
+            "fieldType": "FILE",
+            "isRequired": true,
+            "displayOrder": 2,
+            "isVisible": true,
+            "label": "*Upload Accreditation Certificate",
+            "placeholder": "*Upload Accreditation Certificate",
+            "helpText": "PDF or image, max 5 MB",
+            "displayName": "Accreditation Certificate",
+            "regexPattern": null,
+            "fileConfig": {
+              "acceptedFormats": ["application/pdf", "image/jpeg", "image/png"],
+              "maxSizeBytes": 5242880,
+              "maxSizeMB": "5"
+            },
+            "actions": [
+              {
+                "id": "openFilePicker",
+                "label": "Choose file",
+                "type": "secondary",
+                "apiCallRequired": false
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "fieldName": "institute_registration_certificate",
+            "fieldType": "FILE",
+            "isRequired": true,
+            "displayOrder": 3,
+            "isVisible": true,
+            "label": "*Upload Institute Registration Certificate",
+            "placeholder": "*Upload Institute Registration Certificate",
+            "helpText": "PDF or image, max 5 MB",
+            "displayName": "Institute Registration Certificate",
+            "regexPattern": null,
+            "fileConfig": {
+              "acceptedFormats": ["application/pdf", "image/jpeg", "image/png"],
+              "maxSizeBytes": 5242880,
+              "maxSizeMB": "5"
+            },
+            "actions": [
+              {
+                "id": "openFilePicker",
+                "label": "Choose file",
+                "type": "secondary",
+                "apiCallRequired": false
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "fieldName": "educational_license",
+            "fieldType": "FILE",
+            "isRequired": true,
+            "displayOrder": 3,
+            "isVisible": true,
+            "label": "*Upload Educational License",
+            "placeholder": "*Upload Educational License",
+            "helpText": "PDF or image, max 5 MB",
+            "displayName": "Educational License",
+            "regexPattern": null,
+            "fileConfig": {
+              "acceptedFormats": ["application/pdf", "image/jpeg", "image/png"],
+              "maxSizeBytes": 5242880,
+              "maxSizeMB": "5"
+            },
+            "actions": [
+              {
+                "id": "openFilePicker",
+                "label": "Choose file",
+                "type": "secondary",
+                "apiCallRequired": false
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "id": "back",
+            "label": "Back",
+            "type": "secondary",
+            "apiCallRequired": false,
+            "layout": "row"
+          },
+          {
+            "id": "next",
+            "label": "Next",
+            "type": "primary",
+            "apiCallRequired": true,
+            "method": "POST",
+            "endpoint": "/registration/step/fileupload",
+            "submitSectionId": 4,
+            "layout": "row"
+          }
+        ],
+        "footer": {
+          "text": "Already have an account?",
+          "linkText": "Log in",
+          "linkAction": "navigateToLogin"
+        }
+      },
+      {
+        "id": 6,
+        "name": "Banking Details",
+        "title": "Please provide your Banking Details",
+        "order": 4,
+        "fields": [
+          {
+            "id": 1,
+            "fieldName": "bank_name",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 0,
+            "isVisible": true,
+            "label": "Bank Name*",
+            "placeholder": "Bank Name*",
+            "helpText": null,
+            "displayName": "Bank Name",
+            "regexPattern": "^[A-Za-z0-9\\s\\-&\\.]{2,100}$"
+          },
+          {
+            "id": 2,
+            "fieldName": "account_holder_name",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 1,
+            "isVisible": true,
+            "label": "Account Holder Name*",
+            "placeholder": "Account Holder Name*",
+            "helpText": null,
+            "displayName": "Account Holder Name",
+            "regexPattern": "^[A-Za-z\\s\\.'-]{2,100}$"
+          },
+          {
+            "id": 3,
+            "fieldName": "bank_account_number",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 2,
+            "isVisible": true,
+            "label": "Bank Account Number*",
+            "placeholder": "Bank Account Number*",
+            "helpText": null,
+            "displayName": "Bank Account Number",
+            "regexPattern": "^[0-9]{8,18}$"
+          },
+          {
+            "id": 4,
+            "fieldName": "iban_number",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 3,
+            "isVisible": true,
+            "label": "IBAN Number*",
+            "placeholder": "IBAN Number*",
+            "helpText": null,
+            "displayName": "IBAN Number",
+            "regexPattern": "^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$"
+          },
+          {
+            "id": 5,
+            "fieldName": "swift_code",
+            "fieldType": "TEXT",
+            "isRequired": false,
+            "displayOrder": 4,
+            "isVisible": true,
+            "label": "Swift Code",
+            "placeholder": "Swift Code",
+            "helpText": null,
+            "displayName": "SWIFT/BIC",
+            "regexPattern": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$"
+          },
+          {
+            "id": 6,
+            "fieldName": "ifsc_code",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 5,
+            "isVisible": true,
+            "label": "IFSC Code*",
+            "placeholder": "IFSC Code*",
+            "helpText": null,
+            "displayName": "IFSC Code",
+            "regexPattern": "^[A-Z]{4}0[A-Z0-9]{6}$"
+          },
+          {
+            "id": 7,
+            "fieldName": "iban_certificate",
+            "fieldType": "FILE",
+            "isRequired": true,
+            "displayOrder": 6,
+            "isVisible": true,
+            "label": "*Upload IBAN Certificate",
+            "placeholder": "*Upload IBAN Certificate",
+            "helpText": "PDF or image, max 5 MB",
+            "displayName": "IBAN Certificate",
+            "regexPattern": null,
+            "fileConfig": {
+              "acceptedFormats": ["application/pdf", "image/jpeg", "image/png"],
+              "maxSizeBytes": 5242880,
+              "maxSizeMB": "5"
+            },
+            "actions": [
+              {
+                "id": "openFilePicker",
+                "label": "Choose file",
+                "type": "secondary",
+                "apiCallRequired": false
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "id": "submit",
+            "label": "Submit",
+            "type": "primary",
+            "apiCallRequired": true,
+            "method": "POST",
+            "endpoint": "/registration/step/banking",
+            "submitSectionId": 5,
+            "layout": "column"
+          }
+        ],
+        "footer": {
+          "text": "Already have an account?",
+          "linkText": "Log in",
+          "linkAction": "navigateToLogin"
+        }
+      }
+    ]
+  }
+}

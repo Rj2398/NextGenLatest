@@ -1,0 +1,842 @@
+{
+  "welcome": "مرحبًا بك في NextGen!",
+  "description": "هذا تطبيق تجريبي يدعم لغات متعددة.",
+  "home": {
+    "title": "شاشة الرئيسية",
+    "loading": "جارٍ تحميل البيانات...",
+    "error": "خطأ في جلب البيانات"
+  },
+  "StartUp": {
+    "title": "اختر نوع المستخدم",
+    "user": "مستخدم",
+    "user_type": "user",
+    "academia": "أكاديمية",
+    "academia_type": "academia",
+    "merchant": "تاجر",
+    "merchant_type": "merchant",
+    "no_internet_connection": "لا يوجد اتصال بالإنترنت",
+    "failed_to_fetch_page_group": "فشل في جلب معلومات مجموعة الصفحة",
+    "something_went_wrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+    "error_title": "خطأ",
+    "ok": "موافق"
+  },
+  "onboarding": [
+    {
+      "image": "onboard1",
+      "title": "إدارة متجر مدرستك",
+      "description": "قم بتحديث معلومات المتجر وساعات العمل وتفاصيل الاتصال بسهولة للحفاظ على كل شيء محدثًا."
+    },
+    {
+      "image": "onboard2",
+      "title": "تتبع المخزون في الوقت الحقيقي",
+      "description": "ابق على اطلاع بمستويات المخزون ولا تفوت أي عملية بيع بسبب نفاد المخزون."
+    },
+    {
+      "image": "onboard3",
+      "title": "الترويج بإعلانات مخصصة",
+      "description": "صمم وانشر إعلانات لتسليط الضوء على العروض والوافدين الجدد في دقائق."
+    },
+    {
+      "image": "onboard4",
+      "title": "جذب المشترين بالخصومات",
+      "description": "قدم عروضًا محدودة الوقت لزيادة الحركة وزيادة التحويلات."
+    },
+    {
+      "image": "onboard5",
+      "title": "بناء علامتك التجارية",
+      "description": "اعرض هوية مدرستك بمعلومات غنية عن الملف الشخصي وتفاصيل الاتصال."
+    }
+  ],
+  "login": {
+    "title": "تسجيل الدخول",
+    "email": "أدخل اسم المستخدم / البريد الإلكتروني",
+    "emailPlaceholder": "أدخل البريد الإلكتروني",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "password": "كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور",
+    "loginButton": "تسجيل الدخول",
+    "loggingIn": "جارٍ تسجيل الدخول...",
+    "genericError": "حدث خطأ. يرجى المحاولة مرة أخرى.",
+    "registerButton": "تسجيل",
+    "newHere": "جديد هنا؟",
+    "registerTxt": "سجل الآن",
+    "send": "إرسال"
+  },
+  "userTitle": {
+    "user": "مستخدم",
+    "institute": "معهد",
+    "merchant": "تاجر"
+  },
+  "validation": {
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "emailInvalid": "تنسيق البريد الإلكتروني غير صالح",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "passwordMinLength": "يجب أن تكون كلمة المرور 6 أحرف على الأقل"
+  },
+  "emailSent": {
+    "title": "تم إرسال البريد الإلكتروني",
+    "description": "تحقق من صندوق الوارد لإعادة تعيين كلمة المرور",
+    "instruction": {
+      "title": "اتبع التعليمات التالية",
+      "instruction1": "انقر على ",
+      "instruction_1": "رابط إعادة تعيين كلمة المرور",
+      "instruction2": "إنشاء ",
+      "instruction_2": "كلمة مرور جديدة"
+    },
+    "button_1": "تسجيل الدخول",
+    "button_2": "إعادة إرسال البريد الإلكتروني",
+    "label_1": "لم تحصل على البريد؟",
+    "label_2": "تحقق من البريد المؤقت",
+    "label_3": "تواصل مع الدعم",
+    "success": "تم إرسال البريد الإلكتروني بنجاح",
+    "successDescription": "يرجى التحقق من صندوق الوارد للحصول على تعليمات إضافية"
+  },
+  "error": {
+    "missingParams": "معاملات مفقودة",
+    "missingParamsDescription": "البريد الإلكتروني أو نوع المستخدم مفقود"
+  },
+
+  "buttons": {
+    "next": "التالي",
+    "back": "رجوع",
+    "getStarted": "البدء"
+  },
+  "network_error": "لا يوجد اتصال بالإنترنت",
+  "network_message": "يرجى التحقق من الاتصال الخاص بك.",
+  "logout": "تسجيل خروج",
+  "unauthorized": "انتهت الجلسة. الرجاء تسجيل الدخول مرة أخرى.",
+  "registerPage": {
+    "pageId": 1,
+    "pageName": "Academia_ContactVerification",
+    "sections": [
+      {
+        "id": 1,
+        "name": "إنشاء الحساب",
+        "title": "لنقم بإنشاء حسابك",
+        "order": 0,
+        "fields": [
+          {
+            "id": 1,
+            "fieldName": "full_name",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 0,
+            "isVisible": true,
+            "label": "الاسم الكامل*",
+            "placeholder": "أدخل الاسم الكامل",
+            "helpText": null,
+            "displayName": "الاسم الكامل",
+            "regexPattern": "^[a-zA-Z\\s]{2,}$"
+          },
+          {
+            "id": 2,
+            "fieldName": "email_address",
+            "fieldType": "EMAIL",
+            "isRequired": true,
+            "displayOrder": 1,
+            "isVisible": true,
+            "label": "عنوان البريد الإلكتروني*",
+            "placeholder": "أدخل عنوان البريد الإلكتروني",
+            "helpText": null,
+            "displayName": "عنوان البريد الإلكتروني",
+            "regexPattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+          },
+          {
+            "id": 3,
+            "fieldName": "contact_number",
+            "fieldType": "PHONE",
+            "isRequired": true,
+            "displayOrder": 2,
+            "isVisible": true,
+            "label": "رقم الاتصال*",
+            "placeholder": "+971-XX-XXXXXXX",
+            "helpText": "مطلوب تنسيق الهاتف الإماراتي",
+            "displayName": "رقم الاتصال",
+            "regexPattern": "^\\+971[0-9]{10}$",
+            "actions": [
+              {
+                "id": "sendOtp",
+                "label": "إرسال رمز التحقق",
+                "type": "secondary",
+                "apiCallRequired": true,
+                "method": "POST",
+                "endpoint": "/auth/send-otp",
+                "params": {"toField": "contact_number"}
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "fieldName": "otp",
+            "fieldType": "OTP",
+            "isRequired": true,
+            "displayOrder": 3,
+            "isVisible": true,
+            "label": "أدخل رمز التحقق المرسل إلى رقمك",
+            "placeholder": "____",
+            "helpText": null,
+            "displayName": "رمز التحقق",
+            "regexPattern": "^[0-9]{4}$",
+            "otpLength": 4,
+            "actions": [
+              {
+                "id": "verifyOtp",
+                "label": "تحقق",
+                "type": "secondary",
+                "apiCallRequired": true,
+                "method": "POST",
+                "endpoint": "/auth/verify-otp",
+                "params": {"toField": "contact_number", "codeField": "otp"}
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "id": "next",
+            "label": "التالي",
+            "type": "primary",
+            "apiCallRequired": true,
+            "method": "POST",
+            "endpoint": "/registration/step/1",
+            "submitSectionId": 1
+          }
+        ],
+        "footer": {
+          "text": "هل لديك حساب بالفعل؟",
+          "linkText": "تسجيل الدخول",
+          "linkAction": "navigateToLogin"
+        }
+      },
+      {
+        "id": 2,
+        "name": "تعيين كلمة المرور",
+        "title": "لنقم بإنشاء حسابك",
+        "order": 0,
+        "fields": [
+          {
+            "id": 301,
+            "fieldName": "setPassword",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 1,
+            "isVisible": true,
+            "label": "تعيين كلمة المرور",
+            "placeholder": "أدخل كلمة المرور",
+            "regexPattern": "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%&*]).{6,}$",
+            "helpText": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل وتتضمن حروفًا وأرقامًا ورمزًا خاصًا واحدًا (@#$%&*)",
+            "displayName": "كلمة المرور"
+          },
+          {
+            "id": 302,
+            "fieldName": "confirmPassword",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 2,
+            "isVisible": true,
+            "label": "تأكيد كلمة المرور",
+            "placeholder": "أعد إدخال كلمة المرور",
+            "regexPattern": "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%&*]).{6,}$",
+            "helpText": "يجب أن تتطابق كلتا كلمتي المرور",
+            "displayName": "تأكيد كلمة المرور"
+          }
+        ],
+        "buttons": [
+          {
+            "id": "back",
+            "label": "رجوع",
+            "type": "secondary",
+            "layout": "row",
+            "apiCallRequired": false,
+            "method": null,
+            "endpoint": null,
+            "submitSectionId": null,
+            "navigateTo": "previousSection"
+          },
+          {
+            "id": "next",
+            "label": "التالي",
+            "layout": "row",
+            "type": "primary",
+            "apiCallRequired": false,
+            "method": "POST",
+            "endpoint": "/registration/step/merchant",
+            "submitSectionId": 10,
+            "navigateTo": "nextSection"
+          }
+        ],
+        "footer": {"text": "", "linkText": "", "linkAction": ""}
+      },
+      {
+        "id": 10,
+        "name": "إعداد التاجر",
+        "title": "لنقم بإعداد حساب التاجر",
+        "subtitle": "ابدأ فترة التجربة لمدة 30 يومًا.",
+        "order": 0,
+        "fields": [
+          {
+            "id": 1001,
+            "fieldName": "merchant_name",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 0,
+            "isVisible": true,
+            "label": "اسم التاجر*",
+            "placeholder": "اسم التاجر",
+            "helpText": null,
+            "displayName": "اسم التاجر",
+            "regexPattern": "^[\\w\\s\\.\\-]{2,}$"
+          },
+          {
+            "id": 1002,
+            "fieldName": "merchant_email",
+            "fieldType": "EMAIL",
+            "isRequired": true,
+            "displayOrder": 1,
+            "isVisible": true,
+            "label": "البريد الإلكتروني للتاجر*",
+            "placeholder": "البريد الإلكتروني للتاجر",
+            "helpText": null,
+            "displayName": "البريد الإلكتروني للتاجر",
+            "regexPattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+          },
+          {
+            "id": 1003,
+            "fieldName": "merchant_phone",
+            "fieldType": "PHONE",
+            "isRequired": true,
+            "displayOrder": 2,
+            "isVisible": true,
+            "label": "رقم هاتف التاجر*",
+            "placeholder": "رقم هاتف التاجر",
+            "helpText": null,
+            "displayName": "هاتف التاجر",
+            "regexPattern": "^\\+?[0-9\\s\\-\\(\\)]{7,}$"
+          },
+          {
+            "id": 1004,
+            "fieldName": "website_address",
+            "fieldType": "URL",
+            "isRequired": true,
+            "displayOrder": 3,
+            "isVisible": true,
+            "label": "عنوان الموقع الإلكتروني*",
+            "placeholder": "عنوان الموقع الإلكتروني",
+            "helpText": null,
+            "displayName": "عنوان الموقع الإلكتروني",
+            "regexPattern": "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$"
+          },
+          {
+            "id": 1005,
+            "fieldName": "business_name",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 4,
+            "isVisible": true,
+            "label": "اسم العمل*",
+            "placeholder": "اسم العمل",
+            "helpText": null,
+            "displayName": "اسم العمل",
+            "regexPattern": "^[\\w\\s\\.\\-]{2,}$"
+          },
+          {
+            "id": 1006,
+            "fieldName": "business_type",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 5,
+            "isVisible": true,
+            "label": "نوع العمل*",
+            "placeholder": "نوع العمل",
+            "helpText": null,
+            "displayName": "نوع العمل",
+            "regexPattern": null
+          },
+          {
+            "id": 1007,
+            "fieldName": "emirates_id",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 6,
+            "isVisible": true,
+            "label": "رقم الهوية الإماراتية*",
+            "placeholder": "رقم الهوية الإماراتية",
+            "helpText": null,
+            "displayName": "الهوية الإماراتية",
+            "regexPattern": "^[A-Z0-9\\-]{4,}$"
+          }
+        ],
+        "buttons": [
+          {
+            "id": "back",
+            "label": "رجوع",
+            "type": "secondary",
+            "layout": "row",
+            "apiCallRequired": false,
+            "method": null,
+            "endpoint": null,
+            "submitSectionId": null,
+            "navigateTo": "previousSection"
+          },
+          {
+            "id": "next",
+            "label": "التالي",
+            "layout": "row",
+            "type": "primary",
+            "apiCallRequired": false,
+            "method": "POST",
+            "endpoint": "/registration/step/merchant",
+            "submitSectionId": 10,
+            "navigateTo": "nextSection"
+          }
+        ],
+        "footer": {
+          "text": "هل لديك حساب بالفعل؟",
+          "linkText": "تسجيل الدخول",
+          "linkAction": "navigateToLogin"
+        }
+      },
+      {
+        "id": 4,
+        "name": "تفاصيل العنوان",
+        "title": "يرجى تقديم عنوان المعهد الخاص بك",
+        "order": 3,
+        "fields": [
+          {
+            "id": 1,
+            "fieldName": "building_name",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 0,
+            "isVisible": true,
+            "label": "اسم/رقم المبنى*",
+            "placeholder": "اسم/رقم المبنى*",
+            "helpText": null,
+            "displayName": "اسم/رقم المبنى",
+            "regexPattern": "^[a-zA-Z0-9\\s\\-\\/]{1,100}$"
+          },
+          {
+            "id": 2,
+            "fieldName": "street_name",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 1,
+            "isVisible": true,
+            "label": "اسم الشارع*",
+            "placeholder": "اسم الشارع*",
+            "helpText": null,
+            "displayName": "اسم الشارع",
+            "regexPattern": "^[a-zA-Z0-9\\s\\-]{1,100}$"
+          },
+          {
+            "id": 3,
+            "fieldName": "area_locality",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 2,
+            "isVisible": true,
+            "label": "المنطقة/المحلة*",
+            "placeholder": "المنطقة/المحلة*",
+            "helpText": null,
+            "displayName": "المنطقة/المحلة",
+            "regexPattern": "^[a-zA-Z0-9\\s\\-]{1,100}$"
+          },
+          {
+            "id": 4,
+            "fieldName": "city",
+            "fieldType": "DROPDOWN",
+            "isRequired": true,
+            "displayOrder": 3,
+            "isVisible": true,
+            "label": "المدينة*",
+            "placeholder": "المدينة*",
+            "helpText": null,
+            "displayName": "المدينة",
+            "regexPattern": null,
+            "options": [
+              {"value": "dubai", "label": "دبي"},
+              {"value": "abu_dhabi", "label": "أبو ظبي"},
+              {"value": "sharjah", "label": "الشارقة"},
+              {"value": "ajman", "label": "عجمان"},
+              {"value": "ras_al_khaimah", "label": "رأس الخيمة"},
+              {"value": "fujairah", "label": "الفجيرة"},
+              {"value": "umm_al_quwain", "label": "أم القيوين"}
+            ]
+          },
+          {
+            "id": 5,
+            "fieldName": "province",
+            "fieldType": "DROPDOWN",
+            "isRequired": true,
+            "displayOrder": 4,
+            "isVisible": true,
+            "label": "الإمارة*",
+            "placeholder": "الإمارة*",
+            "helpText": null,
+            "displayName": "الإمارة",
+            "regexPattern": null,
+            "options": [
+              {"value": "dubai", "label": "دبي"},
+              {"value": "abu_dhabi", "label": "أبو ظبي"},
+              {"value": "sharjah", "label": "الشارقة"},
+              {"value": "ajman", "label": "عجمان"},
+              {"value": "ras_al_khaimah", "label": "رأس الخيمة"},
+              {"value": "fujairah", "label": "الفجيرة"},
+              {"value": "umm_al_quwain", "label": "أم القيوين"}
+            ]
+          },
+          {
+            "id": 6,
+            "fieldName": "postal_code",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 5,
+            "isVisible": true,
+            "label": "الرمز البريدي*",
+            "placeholder": "الرمز البريدي*",
+            "helpText": null,
+            "displayName": "الرمز البريدي",
+            "regexPattern": "^[0-9]{5}$"
+          },
+          {
+            "id": 7,
+            "fieldName": "gps_location",
+            "fieldType": "gps_location",
+            "isRequired": true,
+            "displayOrder": 6,
+            "isVisible": true,
+            "label": "الموقع الجغرافي*",
+            "placeholder": "الموقع الجغرافي*",
+            "helpText": "اضغط على أيقونة الموقع لملء الحقل باستخدام موقعك الحالي",
+            "displayName": "الموقع الجغرافي",
+            "regexPattern": "^-?([1-8]?[1-9]|[1-9]0)\\.{1}\\d{1,6},-?([1-8]?[1-9]|[1-9]0)\\.{1}\\d{1,6}$",
+            "actions": [
+              {
+                "id": "detectLocation",
+                "label": "استخدام الموقع الحالي",
+                "type": "secondary",
+                "apiCallRequired": true,
+                "method": "GET",
+                "endpoint": "/device/location/current",
+                "params": {
+                  "provider": "googleMaps",
+                  "composeInto": "gps_location"
+                },
+                "chainedActions": [
+                  {
+                    "id": "reverseGeocode",
+                    "label": "الترميز العكسي",
+                    "type": "background",
+                    "apiCallRequired": true,
+                    "method": "GET",
+                    "endpoint": "https://maps.googleapis.com/maps/api/geocode/json",
+                    "params": {
+                      "latlng": "{{gps_location}}",
+                      "key": "{{GOOGLE_MAPS_API_KEY}}"
+                    },
+                    "mapResponseToFields": {
+                      "street_name": "route",
+                      "area_locality": "sublocality",
+                      "city": "locality",
+                      "province": "administrative_area_level_1",
+                      "postal_code": "postal_code"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "id": "back",
+            "label": "رجوع",
+            "type": "secondary",
+            "apiCallRequired": false,
+            "layout": "row"
+          },
+          {
+            "id": "next",
+            "label": "التالي",
+            "type": "primary",
+            "apiCallRequired": true,
+            "method": "POST",
+            "endpoint": "/registration/step/address",
+            "submitSectionId": 4,
+            "layout": "row"
+          }
+        ],
+        "footer": {
+          "text": "هل لديك حساب بالفعل؟",
+          "linkText": "تسجيل الدخول",
+          "linkAction": "navigateToLogin"
+        }
+      },
+      {
+        "id": 5,
+        "name": "توثيق المعهد",
+        "title": "يرجى توثيق المعهد",
+        "order": 4,
+        "fields": [
+          {
+            "id": 1,
+            "fieldName": "trade_license",
+            "fieldType": "FILE",
+            "isRequired": true,
+            "displayOrder": 1,
+            "isVisible": true,
+            "label": "*تحميل الرخصة التجارية",
+            "placeholder": "*تحميل الرخصة التجارية",
+            "helpText": "ملف PDF أو صورة، الحد الأقصى 5 ميجابايت",
+            "displayName": "الرخصة التجارية",
+            "regexPattern": null,
+            "fileConfig": {
+              "acceptedFormats": ["application/pdf", "image/jpeg", "image/png"],
+              "maxSizeBytes": 5242880,
+              "maxSizeMB": "5"
+            },
+            "actions": [
+              {
+                "id": "openFilePicker",
+                "label": "اختيار ملف",
+                "type": "secondary",
+                "apiCallRequired": false
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "fieldName": "accreditation_certificate",
+            "fieldType": "FILE",
+            "isRequired": true,
+            "displayOrder": 2,
+            "isVisible": true,
+            "label": "*تحميل شهادة الاعتماد",
+            "placeholder": "*تحميل شهادة الاعتماد",
+            "helpText": "ملف PDF أو صورة، الحد الأقصى 5 ميجابايت",
+            "displayName": "شهادة الاعتماد",
+            "regexPattern": null,
+            "fileConfig": {
+              "acceptedFormats": ["application/pdf", "image/jpeg", "image/png"],
+              "maxSizeBytes": 5242880,
+              "maxSizeMB": "5"
+            },
+            "actions": [
+              {
+                "id": "openFilePicker",
+                "label": "اختيار ملف",
+                "type": "secondary",
+                "apiCallRequired": false
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "fieldName": "institute_registration_certificate",
+            "fieldType": "FILE",
+            "isRequired": true,
+            "displayOrder": 3,
+            "isVisible": true,
+            "label": "*تحميل شهادة تسجيل المعهد",
+            "placeholder": "*تحميل شهادة تسجيل المعهد",
+            "helpText": "ملف PDF أو صورة، الحد الأقصى 5 ميجابايت",
+            "displayName": "شهادة تسجيل المعهد",
+            "regexPattern": null,
+            "fileConfig": {
+              "acceptedFormats": ["application/pdf", "image/jpeg", "image/png"],
+              "maxSizeBytes": 5242880,
+              "maxSizeMB": "5"
+            },
+            "actions": [
+              {
+                "id": "openFilePicker",
+                "label": "اختيار ملف",
+                "type": "secondary",
+                "apiCallRequired": false
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "fieldName": "educational_license",
+            "fieldType": "FILE",
+            "isRequired": true,
+            "displayOrder": 3,
+            "isVisible": true,
+            "label": "*تحميل الترخيص التعليمي",
+            "placeholder": "*تحميل الترخيص التعليمي",
+            "helpText": "ملف PDF أو صورة، الحد الأقصى 5 ميجابايت",
+            "displayName": "الترخيص التعليمي",
+            "regexPattern": null,
+            "fileConfig": {
+              "acceptedFormats": ["application/pdf", "image/jpeg", "image/png"],
+              "maxSizeBytes": 5242880,
+              "maxSizeMB": "5"
+            },
+            "actions": [
+              {
+                "id": "openFilePicker",
+                "label": "اختيار ملف",
+                "type": "secondary",
+                "apiCallRequired": false
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "id": "back",
+            "label": "رجوع",
+            "type": "secondary",
+            "apiCallRequired": false,
+            "layout": "row"
+          },
+          {
+            "id": "next",
+            "label": "التالي",
+            "type": "primary",
+            "apiCallRequired": true,
+            "method": "POST",
+            "endpoint": "/registration/step/fileupload",
+            "submitSectionId": 4,
+            "layout": "row"
+          }
+        ],
+        "footer": {
+          "text": "هل لديك حساب بالفعل؟",
+          "linkText": "تسجيل الدخول",
+          "linkAction": "navigateToLogin"
+        }
+      },
+      {
+        "id": 6,
+        "name": "تفاصيل البنك",
+        "title": "يرجى تقديم تفاصيلك البنكية",
+        "order": 4,
+        "fields": [
+          {
+            "id": 1,
+            "fieldName": "bank_name",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 0,
+            "isVisible": true,
+            "label": "اسم البنك*",
+            "placeholder": "اسم البنك*",
+            "helpText": null,
+            "displayName": "اسم البنك",
+            "regexPattern": "^[A-Za-z0-9\\s\\-&\\.]{2,100}$"
+          },
+          {
+            "id": 2,
+            "fieldName": "account_holder_name",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 1,
+            "isVisible": true,
+            "label": "اسم صاحب الحساب*",
+            "placeholder": "اسم صاحب الحساب*",
+            "helpText": null,
+            "displayName": "اسم صاحب الحساب",
+            "regexPattern": "^[A-Za-z\\s\\.'-]{2,100}$"
+          },
+          {
+            "id": 3,
+            "fieldName": "bank_account_number",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 2,
+            "isVisible": true,
+            "label": "رقم الحساب البنكي*",
+            "placeholder": "رقم الحساب البنكي*",
+            "helpText": null,
+            "displayName": "رقم الحساب البنكي",
+            "regexPattern": "^[0-9]{8,18}$"
+          },
+          {
+            "id": 4,
+            "fieldName": "iban_number",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 3,
+            "isVisible": true,
+            "label": "رقم الآيبان*",
+            "placeholder": "رقم الآيبان*",
+            "helpText": null,
+            "displayName": "رقم الآيبان",
+            "regexPattern": "^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$"
+          },
+          {
+            "id": 5,
+            "fieldName": "swift_code",
+            "fieldType": "TEXT",
+            "isRequired": false,
+            "displayOrder": 4,
+            "isVisible": true,
+            "label": "رمز سويفت",
+            "placeholder": "رمز سويفت",
+            "helpText": null,
+            "displayName": "SWIFT/BIC",
+            "regexPattern": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$"
+          },
+          {
+            "id": 6,
+            "fieldName": "ifsc_code",
+            "fieldType": "TEXT",
+            "isRequired": true,
+            "displayOrder": 5,
+            "isVisible": true,
+            "label": "رمز IFSC*",
+            "placeholder": "رمز IFSC*",
+            "helpText": null,
+            "displayName": "رمز IFSC",
+            "regexPattern": "^[A-Z]{4}0[A-Z0-9]{6}$"
+          },
+          {
+            "id": 7,
+            "fieldName": "iban_certificate",
+            "fieldType": "FILE",
+            "isRequired": true,
+            "displayOrder": 6,
+            "isVisible": true,
+            "label": "*تحميل شهادة الآيبان",
+            "placeholder": "*تحميل شهادة الآيبان",
+            "helpText": "ملف PDF أو صورة، الحد الأقصى 5 ميجابايت",
+            "displayName": "شهادة الآيبان",
+            "regexPattern": null,
+            "fileConfig": {
+              "acceptedFormats": ["application/pdf", "image/jpeg", "image/png"],
+              "maxSizeBytes": 5242880,
+              "maxSizeMB": "5"
+            },
+            "actions": [
+              {
+                "id": "openFilePicker",
+                "label": "اختيار ملف",
+                "type": "secondary",
+                "apiCallRequired": false
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "id": "submit",
+            "label": "إرسال",
+            "type": "primary",
+            "apiCallRequired": true,
+            "method": "POST",
+            "endpoint": "/registration/step/banking",
+            "submitSectionId": 5,
+            "layout": "column"
+          }
+        ],
+        "footer": {
+          "text": "هل لديك حساب بالفعل؟",
+          "linkText": "تسجيل الدخول",
+          "linkAction": "navigateToLogin"
+        }
+      }
+    ]
+  }
+}
